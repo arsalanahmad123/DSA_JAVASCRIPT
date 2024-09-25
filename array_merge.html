@@ -9,13 +9,17 @@
         <script>
             let data = [6, 24, 6, 7, 236, 794];
             let data1 = [55, 934, 7, 3, 1, 5];
+            let data2 = [];
 
             // let data2 = [...data, ...data1];
 
-            for (let i = 0; i < data1.length; i++) {
-                data.push(data1[i]);
+            for (let i = 0; i < data.length; i++) {
+                data2.push(data[i]);
             }
-            console.log(data);
+            for (let i = 0; i < data1.length; i++) {
+                data2.push(data1[i]);
+            }
+            console.log(data2);
         </script>
     </body>
 </html>
