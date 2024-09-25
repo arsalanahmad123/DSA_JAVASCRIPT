@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array Searching</title>
+    </head>
+    <body>
+        <input
+            type="number"
+            id="elementToSearch"
+            placeholder="Element to search"
+        />
+        <button onclick="searchElement()">Search</button>
+
+        <script>
+            function searchElement() {
+                let data = [40, 12, 4, 140, 50, 60, 23, 30];
+
+                let ind = null;
+
+                const itemToSearch =
+                    document.getElementById('elementToSearch').value;
+
+                for (let i = 0; i < data.length; i++) {
+                    if (parseInt(itemToSearch) === data[i]) {
+                        ind = i;
+                        break;
+                    }
+                }
+                if (ind !== null) {
+                    alert(`Item found at ${ind}`);
+                } else {
+                    alert('Value not found');
+                }
+
+                console.log(ind);
+            }
+        </script>
+    </body>
+</html>

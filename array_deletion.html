@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array Deletion</title>
+    </head>
+    <body>
+        <input
+            type="number"
+            id="position"
+            placeholder="Enter position to delete?"
+        />
+        <button onclick="deleteElement()">Delete Element</button>
+        <p id="areatoshow"></p>
+        <script>
+            let data = [30, 12, 20, 50, 24, 47, 70, 13];
+
+            const area = document.getElementById('areatoshow');
+
+            area.innerText = data;
+            function deleteElement() {
+                const position = document.getElementById('position').value;
+
+                if (position < 0 || position > data.length) {
+                    alert('Wrong position');
+                    return;
+                }
+
+                for (let i = position; i < data.length - 1; i++) {
+                    data[i] = data[i + 1];
+                }
+                data.length = data.length - 1;
+                area.innerText = data.join(',');
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array Insertion</title>
+    </head>
+    <body>
+        <input type="number" id="position" placeholder="Position of element" />
+        <input type="number" id="elementToAdd" placeholder="Element to add" />
+        <button onclick="insertElement()">Insert Element</button>
+        <p id="data"></p>
+        <script>
+            let data = [40, 12, 4, 140, 50, 60, 23, 30];
+
+            const areatoshow = document.getElementById('data');
+            areatoshow.innerText = data;
+
+            function insertElement() {
+                const position = document.getElementById('position').value;
+                const element = parseInt(
+                    document.getElementById('elementToAdd').value
+                );
+
+                if (position < 0 || position > data.length) {
+                    alert('Wrong position');
+                    return;
+                }
+
+                for (let i = data.length - 1; i >= position; i--) {
+                    data[i + 1] = data[i];
+                }
+                data[position] = element;
+
+                areatoshow.innerText = data.join(', ');
+            }
+        </script>
+    </body>
+</html>
