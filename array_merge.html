@@ -7,18 +7,40 @@
     </head>
     <body>
         <script>
-            let data = [6, 24, 6, 7, 236, 794];
-            let data1 = [55, 934, 7, 3, 1, 5];
+            let data = [2, 6, 10, 15, 20, 25, 40];
+            let data1 = [3, 4, 5, 7, 8, 9];
             let data2 = [];
 
             // let data2 = [...data, ...data1];
 
-            for (let i = 0; i < data.length; i++) {
-                data2.push(data[i]);
+            // for (let i = 0; i < data.length; i++) {
+            //     data2.push(data[i]);
+            // }
+            // for (let i = 0; i < data1.length; i++) {
+            //     data2.push(data1[i]);
+            // }
+
+            let i = 0;
+            let j = 0;
+            let k = 0;
+
+            while (i < data.length && j < data1.length) {
+                if (data[i] < data1[j]) {
+                    data2[k] = data[i];
+                    i++;
+                } else {
+                    data2[k] = data1[j];
+                    j++;
+                }
+                k++;
             }
-            for (let i = 0; i < data1.length; i++) {
-                data2.push(data1[i]);
+
+            while (i < data.length) {
+                data2[k] = data[i];
+                i++;
+                k++;
             }
+
             console.log(data2);
         </script>
     </body>
